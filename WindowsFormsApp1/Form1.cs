@@ -11,7 +11,9 @@ using System.Windows.Forms;
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
-    {
+    { 
+        string zuhause = "Ich bin Zuhause";
+       
         public Form1()
         {
             InitializeComponent();
@@ -41,15 +43,25 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            double testzahl = 2.54467;
             LblAnzeige.Text = "Position: X: " + CmdTest.Location.X +
 ", Y: " + CmdTest.Location.Y + "\n" + "Größe: Breite: " +
-          CmdTest.Size.Width + ", Höhe: " + CmdTest.Size.Height;
+          CmdTest.Size.Width + ", Höhe: " + CmdTest.Size.Height + "\n" + "Farbe " + LblAnzeige.BackColor.B + "\n" + testzahl.ToString("0") + "\n" + zuhause;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            BackColor = Color.Yellow;
+           
             LblAnzeige.BackColor = Color.FromArgb(192, 255, 0);
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+                if (LblAnzeige.BackColor.B <= 245)
+                {
+                    LblAnzeige.BackColor = Color.FromArgb(LblAnzeige.BackColor.R, LblAnzeige.BackColor.G, LblAnzeige.BackColor.B + 10);
+                }
+        }
+        
     }
 }
